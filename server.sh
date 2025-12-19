@@ -1,7 +1,7 @@
 #!/bin/bash
 
 server_ip=`ip a | grep "scope global" | xargs | cut -d " " -f 2 | cut -d "/" -f 1`
-port=5555
+port=50000
 
 echo "== DAM-VIOD Xat =="
 echo "IP: $server_ip"
@@ -13,7 +13,7 @@ echo "== Missatges rebuts =="
 while true
 do
 	# -l escolta el port, -v mostra més missatge, -n mostra la direcció en format IP
-	output=$(nc -l -v -n 5555 2>&1)
+	output=$(nc -l -v -n $port 2>&1)
 
 	# Extreu la IP de la línia "Connection received ..." i el 4t paràmetre
 	client_ip=$(echo "$output" | grep "Connection received" | cut -d " " -f 4)
