@@ -7,7 +7,8 @@ echo "== DAM-VIOD Xat =="
 echo "IP: $server_ip"
 echo "Port: $port"
 
-echo -e "== Missatges rebuts =="
+echo -e "\nCtrl + C per sortir"
+echo "== Missatges rebuts =="
 
 while true
 do
